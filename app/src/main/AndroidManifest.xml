@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ali.rsud45">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RSUD45">
+        <activity android:name=".Auth.DaftarWaiting"></activity>
+        <activity android:name=".Auth.DaftarBaru" />
+        <activity android:name=".RegisterPoli.StatusAntrian" />
+        <activity android:name=".RegisterPoli.DaftarPoli" />
+        <activity android:name=".Dashboard.DashboardPasien" />
+        <activity
+            android:name=".Dashboard.DashboardDokter"
+            android:exported="false" />
+        <activity
+            android:name=".Auth.LoginDokter"
+            android:exported="false" />
+        <activity
+            android:name=".Auth.LoginPasien"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>
