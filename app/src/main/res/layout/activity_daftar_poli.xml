@@ -16,6 +16,7 @@
             android:text="Poli Gigi dan Mulut"
             android:fontFamily="@font/regular"
             android:textSize="22sp"
+            android:id="@+id/nama_poli"
             android:layout_margin="20sp"
             android:textColor="@color/black">
         </TextView>
@@ -77,7 +78,7 @@
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tipe Pelayanan"
+            android:text="Tanggal Periksa"
             android:layout_marginLeft="20dp"
             android:fontFamily="@font/regular">
         </TextView>
@@ -85,6 +86,10 @@
             android:layout_width="match_parent"
             android:id="@+id/tgl_periksa"
             android:layout_marginLeft="20dp"
+            android:editable="false"
+            android:focusable="false"
+            android:padding="5dp"
+            android:clickable="false"
             android:layout_marginRight="20dp"
             android:background="@drawable/roundedborder"
             android:layout_height="55dp">
