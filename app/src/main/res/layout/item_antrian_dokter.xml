@@ -2,47 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:weightSum="10"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
         android:id="@+id/card"
-        app:cardBackgroundColor="@color/secondary"
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         app:cardElevation="8dp">
-        <RelativeLayout
+        <LinearLayout
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/date"
+                android:textColor="@color/black"
                 android:text="Hari Ini (13-12-2021)"
                 android:fontFamily="@font/light">
             </TextView>
             <TextView
                 android:layout_alignParentRight="true"
-                android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="12 Pasien"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:text="12"
+                android:id="@+id/pasien"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:fontFamily="@font/regular">
             </TextView>
-        </RelativeLayout>
+            <TextView
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/sub_pasien"
+                android:textColor="@color/black"
+                android:text="Pasien"
+                android:textSize="20sp"
+                android:fontFamily="@font/light">
+            </TextView>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
