@@ -11,5 +11,7 @@ public class ServerUrl {
 
   //SubRoot URL
   public static final String LOGIN_DOKTER= ROOT_URL + "login_dokter";
+  public static final String LOGIN_PASIEN= ROOT_URL + "login_pasien";
   public static final String DASHBOARD_DOKTER= ROOT_URL + "dashboard_dokter";
+  public static final String DASHBOARD_PASIEN= ROOT_URL + "dashboard_pasien";
 }

@@ -11,11 +11,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/logout"
             android:layout_gravity="right"
             android:layout_margin="20dp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:id="@+id/logout">
         </ImageView>
         <ImageView
@@ -85,6 +87,10 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_margin="20dp"
+            android:id="@+id/status_antrian"
+            android:visibility="gone"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:background="@drawable/roundedborder">
             <TextView
                 android:layout_width="wrap_content"
@@ -108,7 +114,7 @@
         </TextView>
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="500dp"
             android:id="@+id/recycleview">
         </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
