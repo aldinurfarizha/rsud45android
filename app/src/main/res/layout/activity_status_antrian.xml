@@ -35,7 +35,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Antrian Sekarang"
+                    android:text="No. Antrian Berjalan"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/white"
                     android:fontFamily="@font/light"
@@ -45,7 +45,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="14"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/white"
                     android:fontFamily="@font/medium"
@@ -58,6 +57,28 @@
                 </TextView>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/light"
+            android:text="*No antrian berjalan akan muncul pada tanggal pemeriksaan di mulai pukul 08:00"
+            android:id="@+id/keterangan_antrian">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/primary"
+            android:fontFamily="@font/medium"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:id="@+id/perbaharui"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:text="Perbaharui">
+
+        </TextView>
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,7 +118,6 @@
                         android:layout_weight="5"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        android:text="#1235863"
                         android:fontFamily="@font/medium">
                     </TextView>
                 </LinearLayout>
@@ -122,7 +142,6 @@
                         android:layout_weight="5"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        android:text="Klinik Gigi"
                         android:fontFamily="@font/medium">
                     </TextView>
                 </LinearLayout>
@@ -147,7 +166,6 @@
                         android:layout_weight="5"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        android:text="22-08-2021"
                         android:fontFamily="@font/medium">
                     </TextView>
                 </LinearLayout>
@@ -174,7 +192,6 @@
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:textColor="@color/white"
-                        android:text="28"
                         android:fontFamily="@font/medium">
                     </TextView>
                 </LinearLayout>
@@ -199,7 +216,6 @@
                         android:layout_weight="5"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        android:text="Fullan Bin Fullanah"
                         android:fontFamily="@font/medium">
                     </TextView>
                 </LinearLayout>
@@ -225,7 +241,6 @@
                         android:layout_weight="5"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        android:text="Reguler"
                         android:fontFamily="@font/medium">
                     </TextView>
                 </LinearLayout>

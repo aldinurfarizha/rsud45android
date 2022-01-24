@@ -16,4 +16,6 @@ public class ServerUrl {
   public static final String DASHBOARD_PASIEN= ROOT_URL + "dashboard_pasien";
   public static final String GET_DOKTER= ROOT_URL + "get_dokter";
   public static final String ANTRI_POLI= ROOT_URL + "daftar_poli";
+  public static final String STATUS_ANTRIAN= ROOT_URL + "status_antrian";
+  public static final String BATAL= ROOT_URL + "batal";
 }

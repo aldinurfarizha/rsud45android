@@ -104,6 +104,12 @@ String id_periksa;
                                         intent.putExtra("id_periksa", id_periksa);
                                         try {
                                             intent.putExtra("registrasi_id", pasien.getString("registrasi_id"));
+                                            intent.putExtra("nama_poli", pasien.getString("nama_poli"));
+                                            intent.putExtra("tanggal_periksa", pasien.getString("tanggal_periksa"));
+                                            intent.putExtra("antrian_no", pasien.getString("antrian_no"));
+                                            intent.putExtra("nama_pasien", pasien.getString("nama_pasien"));
+                                            intent.putExtra("tipe_pelayanan", pasien.getString("tipe_pelayanan"));
+                                            intent.putExtra("poli_id", pasien.getString("poli_id"));
                                         } catch (JSONException e) {
                                             e.printStackTrace();
                                         }
