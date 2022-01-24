@@ -109,6 +109,7 @@
             android:text="Mau Ke Poli Mana ?"
             android:layout_margin="20dp"
             android:textSize="20sp"
+            android:id="@+id/maukepolimana"
             android:fontFamily="@font/regular"
             android:textColor="@color/black">
         </TextView>

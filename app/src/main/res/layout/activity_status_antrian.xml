@@ -87,13 +87,13 @@
                         android:layout_width="0dp"
                         android:layout_weight="5"
                         android:layout_height="wrap_content"
-                        android:text="Batch No"
+                        android:text="No Registrasi"
                         android:fontFamily="@font/light">
                     </TextView>
                     <TextView
                         android:gravity="right"
                         android:layout_width="0dp"
-                        android:id="@+id/nobatch"
+                        android:id="@+id/no_registrasi"
                         android:layout_weight="5"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -162,16 +162,18 @@
                         android:layout_width="0dp"
                         android:layout_weight="5"
                         android:layout_height="wrap_content"
-                        android:text="No. Antrian"
+                        android:text="No. Antrian Anda"
                         android:fontFamily="@font/light">
                     </TextView>
                     <TextView
-                        android:gravity="right"
+                        android:gravity="center"
                         android:layout_width="0dp"
                         android:id="@+id/no_antrian"
                         android:layout_weight="5"
+                        android:background="@color/secondary"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
                         android:text="28"
                         android:fontFamily="@font/medium">
                     </TextView>
@@ -237,9 +239,20 @@
             android:fontFamily="@font/light"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="50dp"
             android:textColor="@color/black"
             android:text="-Mohon Bersiap Apabila Nomor Antrian Sudah Dekat-">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:fontFamily="@font/light"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="50dp"
+            android:textColor="@color/black"
+            android:text="-Apabila anda mendapat nomor antrian 1 hingga 5, harap segera menuju poli pada pukul 08:00-">
         </TextView>
         <Button
             android:layout_width="match_parent"

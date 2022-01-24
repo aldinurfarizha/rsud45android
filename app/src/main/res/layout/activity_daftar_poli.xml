@@ -55,6 +55,7 @@
             android:id="@+id/cara_bayar"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:entries="@array/cara_bayar"
             android:background="@drawable/roundedborder"
             android:layout_height="55dp">
         </Spinner>
@@ -70,6 +71,7 @@
             android:layout_width="match_parent"
             android:id="@+id/tipe_pelayanan"
             android:layout_marginLeft="20dp"
+            android:entries="@array/tipe_pelayanan"
             android:layout_marginRight="20dp"
             android:background="@drawable/roundedborder"
             android:layout_height="55dp">
@@ -107,6 +109,7 @@
             android:id="@+id/cara_kunjungan"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:entries="@array/cara_kunjungan"
             android:background="@drawable/roundedborder"
             android:layout_height="55dp">
         </Spinner>

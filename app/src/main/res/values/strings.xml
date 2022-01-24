@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">RSUD 45</string>
+    <string-array name="cara_bayar">
+        <item>--Pilih Cara Bayar--</item>
+        <item>KREDIT</item>
+        <item>CASH</item>
+        <item>TRANSFER</item>
+    </string-array>
+    <string-array name="tipe_pelayanan">
+        <item>--Pilih Tipe Pelayanan--</item>
+        <item>REGULER</item>
+        <item>VIP</item>
+        <item>SUPER VIP</item>
+    </string-array>
+    <string-array name="cara_kunjungan">
+        <item>--Pilih Cara Kunjungan--</item>
+        <item>MANDIRI</item>
+        <item>DI JEMPUT</item>
+    </string-array>
 </resources>

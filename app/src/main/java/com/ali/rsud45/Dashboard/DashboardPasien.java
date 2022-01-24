@@ -37,7 +37,7 @@ import java.util.ArrayList;
 
 public class DashboardPasien extends AppCompatActivity {
 ImageView logout;
-TextView nama, dob, alamat, norm;
+TextView nama, dob, alamat, norm, maukepolimana;
 Credential credential;
 ProgressDialog dialog;
 PoliAdapter poliAdapter;
@@ -56,6 +56,7 @@ String id_periksa;
         norm = (TextView)findViewById(R.id.rm);
         recyclerView = (RecyclerView)findViewById(R.id.recycleview);
         status_antrian = (RelativeLayout)findViewById(R.id.status_antrian);
+        maukepolimana = (TextView)findViewById(R.id.maukepolimana);
         poliModels = new ArrayList<>();
         credential = SharedPrefManager.getInstance(this).get();
         nama.setText(credential.getNama());
@@ -91,13 +92,21 @@ String id_periksa;
                             JSONArray array = jsonObject.getJSONArray("poli");
                             id_periksa=response.getString("id_periksa");
                             if(response.getBoolean("is_antri")){
+                                recyclerView.setVisibility(View.GONE);
+                                maukepolimana.setVisibility(View.GONE);
                                 status_antrian.setVisibility(View.VISIBLE);
+                                JSONObject pasien = jsonObject.getJSONObject("pasien");
                                 status_antrian.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
                                         Intent intent = new Intent(DashboardPasien.this, StatusAntrian.class);
                                         intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                                         intent.putExtra("id_periksa", id_periksa);
+                                        try {
+                                            intent.putExtra("registrasi_id", pasien.getString("registrasi_id"));
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
                                         startActivity(intent);
                                     }
                                 });
