@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/rsud45android/app/src/main/res/layout/activity_daftar_baru.xml" value="0.25" />
+        <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/rsud45android/app/src/main/res/layout/activity_daftar_poli.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/rsud45android/app/src/main/res/layout/activity_dashboard_pasien.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/WIndows 10/AndroidStudioProjects/rsud45android/app/src/main/res/layout/activity_status_antrian.xml" value="0.22" />
       </map>

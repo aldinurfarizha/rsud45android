@@ -83,9 +83,13 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/roundedborder"
+            android:editable="false"
+            android:focusable="false"
             android:padding="5dp"
+            android:clickable="false"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+
             android:id="@+id/tanggal_lahir">
         </EditText>
         <TextView
@@ -177,13 +181,13 @@
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kecamatan"
+            android:text="Kabupaten"
             android:layout_marginLeft="20dp"
             android:fontFamily="@font/regular">
         </TextView>
         <Spinner
             android:layout_width="match_parent"
-            android:id="@+id/kecamatan"
+            android:id="@+id/kabupaten"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/roundedborder"
@@ -193,13 +197,13 @@
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kelurahan"
+            android:text="Kecamatan"
             android:layout_marginLeft="20dp"
             android:fontFamily="@font/regular">
         </TextView>
         <Spinner
             android:layout_width="match_parent"
-            android:id="@+id/kelurahan"
+            android:id="@+id/kecamatan"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/roundedborder"
@@ -320,23 +324,6 @@
             android:background="@drawable/roundedborder"
             android:layout_height="55dp">
         </Spinner>
-        <TextView
-            android:layout_marginTop="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nomor JKN"
-            android:fontFamily="@font/regular"
-            android:layout_marginLeft="20dp">
-        </TextView>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/roundedborder"
-            android:padding="5dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/jkn">
-        </EditText>
         <TextView
             android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
