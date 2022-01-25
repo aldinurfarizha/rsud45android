@@ -306,7 +306,7 @@
             android:padding="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:id="@+id/nama_ibu">
+            android:id="@+id/nama_ibu_kandung">
         </EditText>
         <TextView
             android:layout_marginTop="10dp"
@@ -318,7 +318,7 @@
         </TextView>
         <Spinner
             android:layout_width="match_parent"
-            android:id="@+id/status_matrial"
+            android:id="@+id/status_martial"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/roundedborder"
