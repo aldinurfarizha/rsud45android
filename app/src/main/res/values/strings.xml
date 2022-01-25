@@ -17,4 +17,128 @@
         <item>MANDIRI</item>
         <item>DI JEMPUT</item>
     </string-array>
+    <string-array name="jenis_kelamin">
+        <item>--Pilih Jenis Kelamin--</item>
+        <item>Laki-Laki</item>
+        <item>Perempuan</item>
+    </string-array>
+    <string-array name="agama">
+        <item>--Pilih Agama--</item>
+        <item>ISLAM</item>
+        <item>KRISTEN</item>
+        <item>KATOLIK</item>
+        <item>HINDU</item>
+        <item>BUDHA</item>
+    </string-array>
+    <string-array name="status_martial">
+        <item>--Pilih Status--</item>
+        <item>BELUM KAWIN</item>
+        <item>KAWIN</item>
+        <item>CERAI HIDUP</item>
+        <item>CERAI MATI</item>
+    </string-array>
+    <string-array name="status_pendidikan">
+        <item>--Pilih Status--</item>
+        <item>BELUM SEKOLAH</item>
+        <item>TK / PAUD</item>
+        <item>SD</item>
+        <item>SMP</item>
+        <item>SMA</item>
+        <item>S1</item>
+        <item>S2</item>
+        <item>S3</item>
+    </string-array>
+    <string-array name="pekerjaan">
+        <item>--Pilih Pekerjaan--</item>
+        <item>BELUM/TIDAK BEKERJA</item>
+        <item>MENGURUS RUMAH TANGGA</item>
+        <item>PELAJAR/MAHASISWA</item>
+        <item>PENSIUNAN</item>
+        <item>PEGAWAI NEGERI SIPIL</item>
+        <item>TENTARA NASIONAL INDONESIA</item>
+        <item>KEPOLISIAN RI</item>
+        <item>PERDAGANGAN</item>
+        <item>PETANI/PEKEBUN</item>
+        <item>PETERNAK</item>
+        <item>NELAYAN/PERIKANAN</item>
+        <item>INDUSTRI</item>
+        <item>KONSTRUKSI</item>
+        <item>TRANSPORTASI</item>
+        <item>KARYAWAN SWASTA</item>
+        <item>KARYAWAN BUMN</item>
+        <item>KARYAWAN BUMD</item>
+        <item>KARYAWAN HONORER</item>
+        <item>BURUH HARIAN LEPAS</item>
+        <item>BURUH TANI/PERKEBUNAN</item>
+        <item>BURUH NELAYAN/PERIKANAN</item>
+        <item>BURUH PETERNAKAN</item>
+        <item>PEMBANTU RUMAH TANGGA</item>
+        <item>TUKANG CUKUR</item>
+        <item>TUKANG LISTRIK</item>
+        <item>TUKANG BATU</item>
+        <item>TUKANG KAYU</item>
+        <item>TUKANG SOL SEPATU</item>
+        <item>TUKANG LAS/PANDAI BESI</item>
+        <item>TUKANG JAHIT</item>
+        <item>TUKANG GIGI</item>
+        <item>PENATA RIAS</item>
+        <item>PENATA BUSANA</item>
+        <item>PENATA RAMBUT</item>
+        <item>MEKANIK</item>
+        <item>SENIMAN</item>
+        <item>TABIB</item>
+        <item>PARAJI</item>
+        <item>PERANCANG BUSANA</item>
+        <item>PENTERJEMAH</item>
+        <item>IMAM MESJID</item>
+        <item>PENDETA</item>
+        <item>PASTOR</item>
+        <item>WARTAWAN</item>
+        <item>USTADZ/MUBALIGH</item>
+        <item>JURU MASAK</item>
+        <item>PROMOTOR ACARA</item>
+        <item>ANGGOTA DPR-RI</item>
+        <item>ANGGOTA DPD</item>
+        <item>ANGGOTA BPK</item>
+        <item>PRESIDEN</item>
+        <item>WAKIL PRESIDEN</item>
+        <item>ANGGOTA MAHKAMAH KONSTITUSI</item>
+        <item>ANGGOTA KABINET/KEMENTERIAN</item>
+        <item>DUTA BESAR</item>
+        <item>GUBERNUR</item>
+        <item>WAKIL GUBERNUR</item>
+        <item>BUPATI</item>
+        <item>WAKIL BUPATI</item>
+        <item>WALIKOTA</item>
+        <item>WAKIL WALIKOTA</item>
+        <item>ANGGOTA DPRD PROVINSI</item>
+        <item>ANGGOTA DPRD KABUPATEN/KOTA</item>
+        <item>DOSEN</item>
+        <item>GURU</item>
+        <item>PILOT</item>
+        <item>PENGACARA</item>
+        <item>NOTARIS</item>
+        <item>ARSITEK</item>
+        <item>AKUNTAN</item>
+        <item>KONSULTAN</item>
+        <item>DOKTER</item>
+        <item>BIDAN</item>
+        <item>PERAWAT</item>
+        <item>APOTEKER</item>
+        <item>PSIKIATER/PSIKOLOG</item>
+        <item>PENYIAR TELEVISI</item>
+        <item>PENYIAR RADIO</item>
+        <item>PELAUT</item>
+        <item>PENELITI</item>
+        <item>SOPIR</item>
+        <item>PIALANG</item>
+        <item>PARANORMAL</item>
+        <item>PEDAGANG</item>
+        <item>PERANGKAT DESA</item>
+        <item>KEPALA DESA</item>
+        <item>BIARAWATI</item>
+        <item>WIRASWASTA</item>
+        <item>LAINNYA</item>
+    </string-array>
+
 </resources>

@@ -220,6 +220,7 @@
         <Spinner
             android:layout_width="match_parent"
             android:id="@+id/jenis_kelamin"
+            android:entries="@array/jenis_kelamin"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/roundedborder"
@@ -255,6 +256,7 @@
             android:layout_width="match_parent"
             android:id="@+id/pekerjaan"
             android:layout_marginLeft="20dp"
+            android:entries="@array/pekerjaan"
             android:layout_marginRight="20dp"
             android:background="@drawable/roundedborder"
             android:layout_height="55dp">
@@ -270,6 +272,7 @@
         <Spinner
             android:layout_width="match_parent"
             android:id="@+id/agama"
+            android:entries="@array/agama"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/roundedborder"
@@ -287,6 +290,7 @@
             android:layout_width="match_parent"
             android:id="@+id/pendidikan"
             android:layout_marginLeft="20dp"
+            android:entries="@array/status_pendidikan"
             android:layout_marginRight="20dp"
             android:background="@drawable/roundedborder"
             android:layout_height="55dp">
@@ -320,6 +324,7 @@
             android:layout_width="match_parent"
             android:id="@+id/status_martial"
             android:layout_marginLeft="20dp"
+            android:entries="@array/status_martial"
             android:layout_marginRight="20dp"
             android:background="@drawable/roundedborder"
             android:layout_height="55dp">
@@ -336,7 +341,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginBottom="50dp"
-            android:id="@+id/addimage"
+            android:id="@+id/kkimage"
             android:src="@drawable/icon_addimage">
         </ImageView>
         <Button
