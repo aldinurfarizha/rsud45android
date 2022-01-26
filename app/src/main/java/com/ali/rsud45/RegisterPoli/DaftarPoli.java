@@ -229,7 +229,7 @@ public class DaftarPoli extends AppCompatActivity {
                                 Intent intent = new Intent(DaftarPoli.this, StatusAntrian.class);
                                 intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                                 final String id = response.getString("id");
-                                intent.putExtra("id",id);
+                                intent.putExtra("registrasi_id",id);
                                 startActivity(intent);
                             }else{
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();

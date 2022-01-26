@@ -40,12 +40,15 @@
         </provider>
         <activity
             android:name=".Dashboard.DashboardDokter"
+            android:noHistory="true"
             android:exported="false" />
         <activity
             android:name=".Auth.LoginDokter"
+            android:noHistory="true"
             android:exported="false" />
         <activity
             android:name=".Auth.LoginPasien"
+            android:noHistory="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
