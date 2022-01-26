@@ -226,10 +226,17 @@ public class DaftarPoli extends AppCompatActivity {
                         try {
                             message = response.getString("message");
                             if(response.getBoolean("success")){
+                                JSONObject arr =response.getJSONObject("data");
                                 Intent intent = new Intent(DaftarPoli.this, StatusAntrian.class);
                                 intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                                 final String id = response.getString("id");
-                                intent.putExtra("registrasi_id",id);
+                                final String no_antrian= arr.getString("antrian_no");
+                                intent.putExtra("registrasi_id", id);
+                                intent.putExtra("nama_poli", namapoli);
+                                intent.putExtra("tanggal_periksa", tgl_periksas);
+                                intent.putExtra("antrian_no", no_antrian);
+                                intent.putExtra("nama_pasien", credential.getNama());
+                                intent.putExtra("tipe_pelayanan", tipe_pelayanans);
                                 startActivity(intent);
                             }else{
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();

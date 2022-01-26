@@ -154,5 +154,13 @@ Button batal;
                     }
                 });
     }
+    @Override
+    public void onBackPressed()
+    {
+        finish();
+        Intent intent = new Intent(StatusAntrian.this, DashboardPasien.class);
+        intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 
 }

@@ -27,8 +27,8 @@
         <activity android:name=".Auth.DaftarWaiting"></activity>
         <activity android:name=".Auth.DaftarBaru" />
         <activity android:name=".RegisterPoli.StatusAntrian" />
-        <activity android:name=".RegisterPoli.DaftarPoli" />
-        <activity android:name=".Dashboard.DashboardPasien" />
+        <activity android:name=".RegisterPoli.DaftarPoli" android:noHistory="true" />
+        <activity android:name=".Dashboard.DashboardPasien" android:noHistory="true" />
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.exitus.rsud45.android.fileprovider"

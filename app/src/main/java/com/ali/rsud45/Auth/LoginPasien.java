@@ -1,7 +1,9 @@
 package com.ali.rsud45.Auth;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -13,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.ali.rsud45.Config.ServerUrl;
 import com.ali.rsud45.Dashboard.DashboardDokter;
@@ -28,7 +32,9 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class LoginPasien extends AppCompatActivity {
     EditText nomor_rekam_medis;
@@ -38,6 +44,7 @@ public class LoginPasien extends AppCompatActivity {
     ProgressDialog dialog;
     String message;
     long oneday=86400000;
+    public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +55,7 @@ public class LoginPasien extends AppCompatActivity {
         dokter = (TextView)findViewById(R.id.dokter);
         daftar = (RelativeLayout)findViewById(R.id.daftar);
         AndroidNetworking.initialize(getApplicationContext());
+        checkAndRequestPermissions();
         dialog=new ProgressDialog(LoginPasien.this);
         dialog.setMessage("Loading");
         dialog.setCancelable(false);
@@ -117,6 +125,26 @@ public class LoginPasien extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), DaftarBaru.class));
             }
         });
+    }
+    private  boolean checkAndRequestPermissions() {
+        int Camera = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.CAMERA);
+        int File = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        if (File != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
+        if (File != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.READ_EXTERNAL_STORAGE);
+        }
+        if (Camera != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.CAMERA);
+        }
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]),REQUEST_ID_MULTIPLE_PERMISSIONS);
+            return false;
+        }
+        return true;
     }
     public void SessionCheck(){
         if (SharedPrefManager.getInstance(this).isLoggedIn()) {
