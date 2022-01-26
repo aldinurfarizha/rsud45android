@@ -7,18 +7,22 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -28,6 +32,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import com.ali.rsud45.Config.ExpiredSession;
@@ -42,6 +47,7 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.androidnetworking.interfaces.UploadProgressListener;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -67,7 +73,8 @@ ImageView kk_image;
 Bitmap bitmap, bitmap2;
 File file, destFile, kkfile, ktpfile, f;
 Uri imageCaptureUri;
-String provinsi_id, kabupaten_id, kecamatan_id, currentPhotoPath;
+String provinsi_id, kabupaten_id, kecamatan_id, currentPhotoPath, message;
+Button daftar;
 List<String> ArrayProvinsi = new ArrayList<String>();
 List<String> ArrayProvinsiId = new ArrayList<String>();
 List<String> ArrayKabupaten = new ArrayList<String>();
@@ -103,6 +110,7 @@ private SimpleDateFormat dateFormatter;
         pendidikan=(Spinner)findViewById(R.id.pendidikan);
         status_martial=(Spinner)findViewById(R.id.status_martial);
         kk_image=(ImageView)findViewById(R.id.kkimage);
+        daftar=(Button)findViewById(R.id.daftar);
         Date dater = new Date();
         timeMilli = dater.getTime();
         dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
@@ -114,6 +122,7 @@ private SimpleDateFormat dateFormatter;
         kabupaten.setClickable(false);
         kecamatan.setEnabled(false);
         kecamatan.setClickable(false);
+        checkAndRequestPermissions();
         get_provinsi();
         tanggal_lahir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -173,6 +182,12 @@ private SimpleDateFormat dateFormatter;
             @Override
             public void onClick(View view) {
                 selectImage(DaftarBaru.this);
+            }
+        });
+        daftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendData();
             }
         });
     }
@@ -482,13 +497,49 @@ private SimpleDateFormat dateFormatter;
         }
         return b;
     }
+    private  boolean checkAndRequestPermissions() {
+        int Camera = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.CAMERA);
+        int File = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        if (File != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
+        if (File != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.READ_EXTERNAL_STORAGE);
+        }
+        if (Camera != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.CAMERA);
+        }
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]),REQUEST_ID_MULTIPLE_PERMISSIONS);
+            return false;
+        }
+        return true;
+    }
     public void sendData(){
-        final String namas, niks, tmplahirs, tgllahirs,kelamins, alamats, rts, rws, provinsis, kabupatens, kecamatans, nohps, pekerjaans, agamas, pendidikans, ibu_kandungs, status_martials;
+        final String namas;
+        final String niks;
+        final String tmplahirs;
+        final String tgllahirs;
+        String kelamins;
+        final String alamats;
+        final String rts;
+        final String rws;
+        final String provinsis;
+        final String kabupatens;
+        final String kecamatans;
+        final String nohps;
+        final String pekerjaans;
+        final String agamas;
+        final String pendidikans;
+        final String ibu_kandungs;
+        final String status_martials;
         namas=nama.getText().toString();
         niks=nik.getText().toString();
         tmplahirs=tempat_lahir.getText().toString();
         tgllahirs=tanggal_lahir.getText().toString();
-        kelamins=jenis_kelamin.getSelectedItem().toString();
+        kelamins=""+jenis_kelamin.getSelectedItemPosition();
         alamats=dusun.getText().toString();
         rts=rt.getText().toString();
         rws=rw.getText().toString();
@@ -496,12 +547,110 @@ private SimpleDateFormat dateFormatter;
         kabupatens=kabupaten_id;
         kecamatans=kecamatan_id;
         nohps=no_telp.getText().toString();
-        pekerjaans=pekerjaan.getSelectedItem().toString();
-        agamas=agama.getSelectedItem().toString();
-        pendidikans=pendidikan.getSelectedItem().toString();
+        pekerjaans=""+pekerjaan.getSelectedItemPosition();
+        agamas=""+agama.getSelectedItemPosition();
+        pendidikans=""+pendidikan.getSelectedItemPosition();
         ibu_kandungs=nama_ibu_kandung.getText().toString();
         status_martials=status_martial.getSelectedItem().toString();
 
+
+        if(TextUtils.isEmpty(namas)){
+            nama.requestFocus();
+            nama.setError("Kolom Ini Wajib di isi");
+            return;
+        }
+        if(TextUtils.isEmpty(niks)){
+            nik.requestFocus();
+            nik.setError("Kolom ini wajib di isi");
+            return;
+        }
+        if(niks.length()<15){
+            nik.requestFocus();
+            nik.setError("Nomor KK Minimal 15 angka");
+            return;
+        }
+        if(TextUtils.isEmpty(tmplahirs)){
+            tempat_lahir.requestFocus();
+            tempat_lahir.setError("Kolom ini wajib di isi");
+            return;
+        }
+        if(TextUtils.isEmpty((tgllahirs))){
+            tanggal_lahir.requestFocus();
+            tanggal_lahir.setError("Kolom ini wajib di isi");
+            return;
+        }
+        if(kelamins.equals("0")){
+            openSnackbarMerah("Jenis Kelamin Harus di isi");
+            return;
+        }
+        switch (kelamins){
+            case "1":
+                kelamins="L";
+                break;
+            case "2":
+                kelamins="P";
+        }
+        if(TextUtils.isEmpty(alamats)){
+            dusun.requestFocus();
+            dusun.setError("Kolom ini wajib di isi");
+            return;
+        }
+        if(TextUtils.isEmpty(rts)){
+            rt.requestFocus();
+            rt.setError("Kolom ini wajib di isi");
+            return;
+        }
+        if(TextUtils.isEmpty(rws)){
+            rw.requestFocus();
+            rw.setError("Kolom ini wajib di isi");
+            return;
+        }
+        if(provinsis.equals("0")){
+            openSnackbarMerah("Provinsi Wajib di isi");
+            return;
+        }
+        if(kabupatens.equals(("0"))){
+            openSnackbarMerah("Kabupaten wajib di isi");
+            return;
+        }
+        if(kecamatans.equals("0")){
+            openSnackbarMerah("Kecamatan Wajib di isi");
+            return;
+        }
+        if(TextUtils.isEmpty(nohps)){
+            no_telp.requestFocus();
+            no_telp.setError("Nomor Telepon wajib di isi");
+            return;
+        }
+        if(nohps.length()<9){
+            no_telp.requestFocus();
+            no_telp.setError("Nomor Telepon minimal 9 Angka");
+        }
+        if(pekerjaans.equals("0")){
+            openSnackbarMerah("Pekerjaan Wajib di isi");
+            return;
+        }
+        if(agamas.equals("0")){
+            openSnackbarMerah("Agama wajib di isi");
+            return;
+        }
+        if(pendidikans.equals("0")){
+            openSnackbarMerah("Pendidikan wajib di isi");
+            return;
+        }
+        if(TextUtils.isEmpty(ibu_kandungs)){
+            nama_ibu_kandung.requestFocus();
+            nama_ibu_kandung.setError("Kolom ini wajib di isi");
+            return;
+        }
+        if(status_martials.equals("--Pilih Status--")){
+            openSnackbarMerah("Status Martial wajib di isi");
+            return;
+        }
+        if(kkfile==null){
+            openSnackbarMerah("Wajib melampirkan foto KK");
+            return;
+        }
         AndroidNetworking.upload(ServerUrl.REGISTRASI_PASIEN)
                 .addMultipartFile("file",kkfile)
                 .addMultipartParameter("nama",namas)
@@ -532,31 +681,28 @@ private SimpleDateFormat dateFormatter;
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        sweetAlertDialog.dismiss();
+                        dialog.dismiss();
                         try {
-                            message = response.getString("message");
                             if(response.getBoolean("success")){
                                 Date date = new Date();
                                 long timeMilli = date.getTime();
                                 long exp_until=timeMilli + ExpiredSession.DURATION;
+                                JSONObject arr =response.getJSONObject("data");
                                 Credential credentials= new Credential(
-                                        credential.getId(),
-                                        credential.getNo_anggota(),
-                                        0,
+                                        response.getInt("id"),
+                                        1,
+                                        response.getInt("id"),
                                         exp_until,
-                                        credential.getNama(),
-                                        credential.getEmail(),
-                                        credential.getNo_anggota_alfa(),
-                                        "000000",
-                                        credential.getNoid(),
-                                        2
+                                        arr.getString("nama"),
+                                        arr.getString("tmplahir")+", "+arr.getString("tgllahir"),
+                                        arr.getString("alamat")
                                 );
                                 SharedPrefManager.getInstance(getApplicationContext()).userLogin(credentials);
-                                Toasty.success(getApplicationContext(), message, Toast.LENGTH_SHORT, true).show();
+                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                                 finish();
                                 startActivity(new Intent(getApplicationContext(), DaftarWaiting.class));
                             }else{
-                                Toasty.error(getApplicationContext(), message, Toast.LENGTH_SHORT, true).show();
+                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                             }
                         } catch (JSONException e){
                             e.printStackTrace();
@@ -568,6 +714,9 @@ private SimpleDateFormat dateFormatter;
                         Toast.makeText(getApplicationContext(), "Koneksi Buruk Cobal lagi", Toast.LENGTH_LONG).show();
                     }
                 });
+    }
+    public void openSnackbarMerah(String messages) {
+        Snackbar.make(findViewById(android.R.id.content), messages, Snackbar.LENGTH_LONG).setBackgroundTint(Color.RED).show();
     }
 
 }

@@ -4,8 +4,8 @@ public class ServerUrl {
 
 
   //Root URL
-  //private static final String ROOT_URL = "http://45.156.24.136/rsud45web/api/";
-  private static final String ROOT_URL = "http://192.168.2.167/rsud45web/api/";
+  private static final String ROOT_URL = "http://45.156.24.136/rsud45web/api/";
+  //private static final String ROOT_URL = "http://192.168.0.250/rsud45web/api/";
   //Getting Image Conf URL
   public static final String GET_IMAGE ="";
 
@@ -22,5 +22,6 @@ public class ServerUrl {
   public static final String KABUPATEN= ROOT_URL + "get_regencies";
   public static final String KECAMATAN= ROOT_URL + "get_districts";
   public static final String REGISTRASI_PASIEN= ROOT_URL + "registrasi_pasien";
+  public static final String STATUS_PASIEN=ROOT_URL + "check_status";
 
 }

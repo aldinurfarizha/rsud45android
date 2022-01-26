@@ -39,5 +39,15 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="100dp">
         </Button>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Daftar Ulang"
+            android:backgroundTint="@color/secondary"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/daftar_ulang"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp">
+        </Button>
     </LinearLayout>
 </ScrollView>

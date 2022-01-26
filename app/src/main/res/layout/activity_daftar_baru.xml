@@ -133,6 +133,7 @@
                     android:background="@drawable/roundedborder"
                     android:padding="5dp"
                     android:layout_marginLeft="20dp"
+                    android:inputType="number"
                     android:layout_marginRight="20dp"
                     android:id="@+id/rt">
                 </EditText>
@@ -155,6 +156,7 @@
                     android:layout_height="50dp"
                     android:background="@drawable/roundedborder"
                     android:padding="5dp"
+                    android:inputType="number"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:id="@+id/rw">
