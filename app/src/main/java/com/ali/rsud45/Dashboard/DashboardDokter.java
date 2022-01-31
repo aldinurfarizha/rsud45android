@@ -67,7 +67,7 @@ ImageView logout;
     public void getData(){
         dialog.show();
         AndroidNetworking.post(ServerUrl.DASHBOARD_DOKTER)
-                .addBodyParameter("id_poli", ""+credential.getOff_id())
+                .addBodyParameter("poli_id", ""+credential.getOff_id())
                 .setPriority(Priority.IMMEDIATE)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
