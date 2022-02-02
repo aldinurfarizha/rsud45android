@@ -82,7 +82,7 @@ public class LoginDokter extends AppCompatActivity {
                                         JSONObject arr =response.getJSONObject("data");
                                         usernamess= arr.getString("username");
                                         Credential credential= new Credential(
-                                                arr.getInt("user_id"),
+                                                arr.getString("user_id"),
                                                 arr.getInt("role_id"),
                                                 arr.getInt("poli_id"),
                                                 exp_until,

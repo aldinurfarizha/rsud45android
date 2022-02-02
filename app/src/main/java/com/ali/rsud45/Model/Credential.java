@@ -2,11 +2,11 @@ package com.ali.rsud45.Model;
 
 public class Credential {
 
-    private int id, role, off_id;
+    private int  role, off_id;
     private long exp;
-    private String nama, username, off_name;
+    private String id, nama, username, off_name;
 
-    public Credential(int id, int role, int off_id, long exp, String nama, String username, String off_name) {
+    public Credential(String id, int role, int off_id, long exp, String nama, String username, String off_name) {
         this.id = id;
         this.role = role;
         this.off_id = off_id;
@@ -16,11 +16,11 @@ public class Credential {
         this.off_name = off_name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

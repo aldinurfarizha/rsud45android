@@ -689,7 +689,7 @@ private SimpleDateFormat dateFormatter;
                                 long exp_until=timeMilli + ExpiredSession.DURATION;
                                 JSONObject arr =response.getJSONObject("data");
                                 Credential credentials= new Credential(
-                                        response.getInt("id"),
+                                        response.getString("id"),
                                         1,
                                         response.getInt("id"),
                                         exp_until,
@@ -698,7 +698,6 @@ private SimpleDateFormat dateFormatter;
                                         arr.getString("alamat")
                                 );
                                 SharedPrefManager.getInstance(getApplicationContext()).userLogin(credentials);
-                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                                 finish();
                                 startActivity(new Intent(getApplicationContext(), DaftarWaiting.class));
                             }else{

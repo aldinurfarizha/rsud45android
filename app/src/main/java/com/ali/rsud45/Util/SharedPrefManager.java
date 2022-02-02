@@ -36,7 +36,7 @@ public class SharedPrefManager {
     public void userLogin(Credential credential) {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(KEY_ID, credential.getId());
+        editor.putString(KEY_ID, credential.getId());
         editor.putInt(KEY_ROLE, credential.getRole());
         editor.putLong(KEY_EXP, credential.getExp());
         editor.putInt(KEY_OFF_ID, credential.getOff_id());
@@ -52,7 +52,7 @@ public class SharedPrefManager {
     public Credential get() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return new Credential(
-                sharedPreferences.getInt(KEY_ID, -1),
+                sharedPreferences.getString(KEY_ID, null),
                 sharedPreferences.getInt(KEY_ROLE, 0),
                 sharedPreferences.getInt(KEY_OFF_ID, 0),
                 sharedPreferences.getLong(KEY_EXP, 0),

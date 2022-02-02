@@ -85,7 +85,7 @@ public class LoginPasien extends AppCompatActivity {
                                         long exp_until=timeMilli+oneday;
                                         JSONObject arr =response.getJSONObject("data");
                                         Credential credential= new Credential(
-                                                arr.getInt("no_rm"),
+                                                arr.getString("no_rm"),
                                                 0,
                                                 0,
                                                 exp_until,

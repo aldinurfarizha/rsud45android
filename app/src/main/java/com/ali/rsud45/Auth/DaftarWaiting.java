@@ -78,12 +78,13 @@ ProgressDialog dialog;
                                     case "2":
                                         Toast.makeText(getApplicationContext(), "Akun Anda di tolak dengan Alasan:" + response.getString("alasan_penolakan"), Toast.LENGTH_LONG).show();
                                         daftarulang.setVisibility(View.VISIBLE);
+                                        break;
                                     default:
                                         Date date = new Date();
                                         long timeMilli = date.getTime();
                                         long exp_until = timeMilli + ExpiredSession.DURATION;
                                         Credential credentials = new Credential(
-                                                response.getInt("no_rm"),
+                                                response.getString("no_rm"),
                                                 0,
                                                 0,
                                                 exp_until,
